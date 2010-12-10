@@ -36,7 +36,7 @@ int isErrorReported=0;
 void initialize_readline() {
 #ifdef QCL_USE_READLINE
 // rl_bind_key ('\t', rl_insert);
-rl_unbind_key ('\t');
+rl_unbind_key('\t');
 #endif
 }
 
