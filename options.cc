@@ -15,6 +15,7 @@ warranty of merchantability or fitness for any particular purpose.
 
 #include <stdio.h>
 #include <time.h>
+#include <string.h>
 
 #include "options.h"
 #include "error.h"

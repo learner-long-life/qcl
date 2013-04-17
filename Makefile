@@ -14,11 +14,11 @@ VERSION=0.6.3
 
 # Directory for Standard .qcl files
 
-QCLDIR = /usr/local/lib/qcl
+QCLDIR = /scratch/ppham/local/lib/qcl
 
 # Path for qcl binaries
 
-QCLBIN = /usr/local/bin
+QCLBIN = /scratch/ppham/local/bin
 
 ARCH = `g++ -dumpmachine || echo bin`
 
@@ -39,8 +39,8 @@ DEBUG = -O2 -g -DQCL_DEBUG -DQC_DEBUG
 #
 # Comment out if you don't have GNU libplotter and X
 
-PLOPT = -DQCL_PLOT
-PLLIB = -L/usr/X11/lib -lplotter
+#PLOPT = -DQCL_PLOT
+#PLLIB = -L/usr/X11/lib -lplotter
 
 # Readline support
 #
@@ -59,7 +59,7 @@ IRQOPT = -DQCL_IRQ
 
 # Replace with lex and yacc on non-GNU systems (untested)
 
-LEX = flex
+LEX = /scratch/ppham/local/bin/flex
 YACC = bison 
 INSTALL = install
 
@@ -73,8 +73,8 @@ QCLINC = lib
 
 #CXX = g++
 #CPP = $(CC) -E
-CXXFLAGS = -c $(ARCHOPT) -Wall $(DEBUG) $(PLOPT) $(RLOPT) $(IRQOPT) -I$(QCDIR) -DDEF_INCLUDE_PATH="\"$(QCLDIR)\""
-LDFLAGS = $(ARCHOPT) -L$(QCDIR) $(DEBUG) $(PLLIB) -lm -lfl -lqc $(RLLIB) 
+CXXFLAGS = -c $(ARCHOPT) -Wall $(DEBUG) $(PLOPT) $(RLOPT) $(IRQOPT) -I$(QCDIR) -DDEF_INCLUDE_PATH="\"$(QCLDIR)\"" -fpermissive
+LDFLAGS = $(ARCHOPT) -L/scratch/ppham/local/lib -L$(QCDIR) $(DEBUG) $(PLLIB) -lm -lfl -lqc $(RLLIB) 
 
 FILESCC = $(wildcard *.cc)
 FILESH = $(wildcard *.h)
